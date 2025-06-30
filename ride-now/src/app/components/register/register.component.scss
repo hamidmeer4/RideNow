@@ -1,0 +1,85 @@
+.form-container {
+  max-width: 480px;
+  margin: auto;
+}
+
+.montserrat-text {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.google-login-btn {
+  border: 2px solid #d8d7d7;
+  color: #afafaf;
+  background-color: #ffffff;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.google-login-btn:hover {
+  color: #555;
+}
+
+
+.facebook-login-btn {
+  background-color: #1877F2;
+  color: white;
+ border: 2px solid #d8d7d7;
+  transition: background-color 0.3s ease;
+}
+
+
+.responsive-paragraph-1,
+.responsive-paragraph-2 {
+  color: white;
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+}
+
+.btn-gradient-light {
+  background: linear-gradient(135deg, #00c6ff 0%, #007bff 100%);
+  color: white;
+  box-shadow: 0 4px 10px rgb(0 198 255 / 0.5);
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.btn-gradient-light:hover {
+  background: linear-gradient(135deg, #007bff 0%, #00c6ff 100%);
+  color: white;
+  box-shadow: 0 6px 14px rgb(0 123 255 / 0.7);
+}
+
+
+.responsive-paragraph-1 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.025em;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+  font-size: 1.25rem; 
+  line-height: 1.7;
+  color: white;
+    text-align: start; 
+
+}
+
+.responsive-paragraph-1 span {
+  color: #a0e9ff;
+  font-weight: 600;
+  text-shadow: 0 0 8px #a0e9ff88;
+}
+
+.responsive-paragraph-2 {
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 0.02em;
+  font-weight: 400;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.25);
+  font-size: 1rem; 
+  color: white;
+  margin-top: 1rem;
+}
+
+.col-10 {
+    flex: 0 0 auto;
+    padding: 0.5rem;
+    width: 90.3333%;
+    border: 1px solid #ddd;
+}

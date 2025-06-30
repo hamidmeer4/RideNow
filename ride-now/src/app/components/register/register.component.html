@@ -1,0 +1,226 @@
+<div class="container-fluid vh-100">
+  <div class="row h-100">
+    <div
+      class="col-md-6 d-flex align-items-center justify-content-center bg-light min-vh-100"
+    >
+      <div
+        class="form-container shadow rounded p-4 bg-white d-flex flex-column justify-content-center"
+        style="width: 70%; height: 88%"
+      >
+        <form [formGroup]="registerForm" (ngSubmit)="handleRegister()">
+          <div class="form-header text-center mb-4">
+            <h2 class="fw-bold montserrat-text">RideNow</h2>
+            <p class="text-muted montserrat-text">Create a new account</p>
+          </div>
+
+          <div class="mb-3 input-group">
+            <span class="input-group-text bg-white">
+              <i class="fas fa-user text-primary"></i>
+            </span>
+            <input
+              class="col-10"
+              type="text"
+              name="name"
+              formControlName="name"
+              placeholder="Full Name"
+              required
+            />
+          </div>
+
+          <div class="mb-3 input-group">
+            <span class="input-group-text bg-white">
+              <i class="fas fa-envelope text-primary"></i>
+            </span>
+            <input
+              class="col-10"
+              type="email"
+              name="email"
+              formControlName="email"
+              placeholder="Email"
+              required
+              email
+            />
+          </div>
+
+          <div class="mb-3 input-group">
+            <span class="input-group-text bg-white">
+              <i class="fas fa-lock text-primary"></i>
+            </span>
+            <input
+              class="col-10"
+              type="password"
+              name="password"
+              formControlName="password"
+              placeholder="Password"
+              required
+              minlength="6"
+            />
+          </div>
+
+          <div class="mb-3 input-group">
+            <span class="input-group-text bg-white">
+              <i class="fas fa-lock text-primary"></i>
+            </span>
+            <input
+              class="col-10"
+              type="password"
+              name="confirmPass"
+              formControlName="confirmPass"
+              placeholder="Confirm Password"
+              required
+            />
+          </div>
+
+          <button
+            type="submit"
+            class="btn btn-primary w-100 py-2 mb-3"
+            [disabled]="registerForm.invalid"
+          >
+            <i class="fas fa-user-plus me-2"></i> Register
+          </button>
+
+          <div class="form-divider text-center my-3 text-muted">
+            <span>or continue with</span>
+          </div>
+
+          <div class="d-flex flex-column align-items-center gap-2 w-100">
+            <button
+              type="button"
+              class="btn w-75 d-flex align-items-center justify-content-center mb-2 google-login-btn"
+              (click)="registerWithGoogle()"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                class="me-2"
+                viewBox="0 0 533.5 544.3"
+              >
+                <path
+                  fill="#4285F4"
+                  d="M533.5 278.4c0-18.4-1.5-36.2-4.3-53.5H272v101h146.9c-6.4 34-25.7 62.7-54.7 82v67h88.4c51.7-47.7 81.9-118 81.9-196.5z"
+                />
+                <path
+                  fill="#34A853"
+                  d="M272 544.3c73.7 0 135.7-24.4 180.9-66.1l-88.4-67c-24.5 16.4-55.9 26-92.5 26-71 0-131.1-47.9-152.6-112.1H26.9v70.4C72.7 483.2 166.4 544.3 272 544.3z"
+                />
+                <path
+                  fill="#FBBC05"
+                  d="M119.4 325.1c-8.7-25.7-8.7-53.3 0-79l-70.4-70.4C18.2 212 0 240.8 0 272.1s18.2 60.1 49 96.4l70.4-43.4z"
+                />
+                <path
+                  fill="#EA4335"
+                  d="M272 107.7c39.9-.6 78.3 13.7 107.7 39.7l80.6-80.6C406.4 23.8 340.8 0 272 0 166.4 0 72.7 61 26.9 154.6l70.4 70.4c21.5-64.2 81.6-112.1 152.5-117.3z"
+                />
+              </svg>
+              Continue with Google
+            </button>
+
+            <button
+              type="button"
+              class="btn w-75 d-flex align-items-center justify-content-center mb-2 facebook-login-btn"
+              (click)="registerWithFacebook()"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 216 216"
+                width="20"
+                height="20"
+                class="me-2"
+              >
+                <path
+                  fill="#1877F2"
+                  d="M204.1 0H11.9C5.3 0 0 5.3 0 11.9v192.3c0 6.6 5.3 11.9 11.9 11.9h103.6V132h-28v-32h28V77.5c0-27.8 17-43 41.8-43 11.9 0 22.2.9 25.1 1.3v29.1h-17.2c-13.5 0-16.1 6.4-16.1 15.8V100h32.2l-4.2 32H148v84.1h56.1c6.6 0 11.9-5.3 11.9-11.9V11.9c0-6.6-5.3-11.9-11.9-11.9z"
+                />
+                <path
+                  fill="#FFF"
+                  d="M148 216v-84.1h28l4.2-32h-32.2V80.7c0-9.5 2.6-15.8 16.1-15.8h17.2V35.8c-3-.4-13.2-1.3-25.1-1.3-24.8 0-41.8 15.1-41.8 43V100H76v32h28v84.1h44z"
+                />
+              </svg>
+              Continue with Facebook
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div
+      class="col-md-6 d-none d-md-flex align-items-center justify-content-center position-relative overflow-hidden bg-primary"
+      style="background: linear-gradient(135deg, #007bff, #00c6ff)"
+    >
+      <div
+        class="position-absolute top-0 start-0 w-100 h-100"
+        style="background: rgba(0, 0, 0, 0.3)"
+      ></div>
+
+      <div
+        class="text-center p-4 position-relative"
+        style="max-width: 420px; z-index: 2"
+        data-aos="fade-left"
+        data-aos-delay="200"
+      >
+        <h2
+          class="fw-bold montserrat-text mb-4"
+          style="
+            font-size: 3.3rem;
+            line-height: 1.3;
+            background: linear-gradient(90deg, #ffffff, #d1faff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 0.09em;
+          "
+        >
+          Join
+          <br />
+          <span
+            style="
+              font-size: 1.75rem;
+              line-height: 1.9;
+              display: block;
+              margin-top: -0.4rem;
+              font-weight: 600;
+              letter-spacing: 0.03em;
+            "
+            >Our Community</span
+          >
+          <span
+            style="
+              font-size: 1.75rem;
+              line-height: 1;
+              display: block;
+              font-weight: 600;
+              letter-spacing: 0.03em;
+              margin-top: 0.1rem;
+            "
+            >and start your journey</span
+          >
+        </h2>
+
+        <p
+          class="responsive-paragraph-1"
+          data-aos="fade-up"
+          data-aos-delay="300"
+        >
+          <strong>RideNow</strong> gives you the freedom to
+          <span>register easily and get ready</span> to book rides instantly,
+          with real-time tracking and a seamless experience.
+        </p>
+
+        <p
+          class="responsive-paragraph-2"
+          data-aos="fade-up"
+          data-aos-delay="400"
+        >
+          Join us today and drive your way forward!
+        </p>
+
+        <a
+          routerLink="/login"
+          class="btn btn-primary rounded-pill mt-4 px-5 py-3 fw-semibold shadow btn-gradient-light"
+        >
+          Learn More
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
