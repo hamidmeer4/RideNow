@@ -1,0 +1,89 @@
+<nav class="sidebar">
+  <div class="logo text-center mb-4">
+    <a class="navbar-brand fw-bold text-gradient" routerLink="/">RideNow 🚗</a>
+    <div class="text-muted ">Menu</div>
+  </div>
+
+  <ul class="menu-list list-unstyled m-0 p-0">
+    <li>
+      <a routerLink="/dashboard" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" title="Dashboard">
+        <i class="pi pi-th-large"></i>
+        <span>Dashboard</span>
+      </a>
+    </li>
+    <li>
+      <a routerLink="/driver" routerLinkActive="active" title="Drivers">
+        <i class="pi pi-user"></i>
+        <span>Drivers</span>
+      </a>
+    </li>
+    <li>
+      <a routerLink="/riders" routerLinkActive="active" title="Riders">
+        <i class="pi pi-users"></i>
+        <span>Riders</span>
+      </a>
+    </li>
+    <li>
+      <a routerLink="/invoices" routerLinkActive="active" title="Invoices">
+        <i class="pi pi-file"></i>
+        <span>Invoices</span>
+      </a>
+    </li>
+    <li>
+      <a routerLink="/routes" routerLinkActive="active" title="Routes">
+        <i class="pi pi-map-marker"></i>
+        <span>Routes</span>
+      </a>
+    </li>
+    <li>
+      <a routerLink="/calendar" routerLinkActive="active" title="Calendar">
+        <i class="pi pi-calendar"></i>
+        <span>Calendar</span>
+      </a>
+    </li>
+    <li>
+      <a routerLink="/reports" routerLinkActive="active" title="Reports">
+        <i class="pi pi-chart-bar"></i>
+        <span>Reports</span>
+      </a>
+    </li>
+    <li>
+      <a routerLink="/ratings" routerLinkActive="active" title="Ratings">
+        <i class="pi pi-star"></i>
+        <span>Ratings</span>
+      </a>
+    </li>
+    <li>
+      <a routerLink="/documents" routerLinkActive="active" title="Documents">
+        <i class="pi pi-folder"></i>
+        <span>Documents</span>
+      </a>
+    </li>
+
+    <li class="mt-3 px-2">
+  <div   class="theme-toggle-btn ms-3 gap-2">
+    <button
+      class="theme-toggle-btn teal-light-btn flex-grow-1"
+      (click)="setTheme('light')"
+      [disabled]="currentTheme === 'light'"
+    >
+      <i class="pi pi-sun me-2"></i> Light
+    </button>
+
+    <div >
+        <hr class="theme-divider">
+    </div>
+
+    <button
+      class="theme-toggle-btn teal-dark-btn flex-grow-1"
+      (click)="setTheme('dark')"
+      [disabled]="currentTheme === 'dark'"
+    >
+      <i class="pi pi-moon me-2"></i> Dark
+    </button>
+  </div>
+</li>
+
+
+  </ul>
+</nav>

@@ -1,0 +1,44 @@
+.navbar {
+  font-family: 'Montserrat', sans-serif;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.text-gradient {
+  background: linear-gradient(to right, #14b8a6, #0f766e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.nav-link {
+  transition: color 0.3s, transform 0.3s;
+  &:hover {
+    color: #14b8a6;
+    transform: translateY(-2px);
+  }
+}
+
+.active {
+  font-weight: 600;
+  color: #0f766e !important;
+}
+
+.btn-teal {
+  background: #14b8a6;
+  color: white;
+  transition: background 0.3s;
+  &:hover {
+    background: #0f766e;
+  }
+}
+
+.btn-outline-teal {
+  border: 2px solid #14b8a6;
+  color: #14b8a6;
+  transition: all 0.3s;
+  &:hover {
+    background: #14b8a6;
+    color: white;
+  }
+}

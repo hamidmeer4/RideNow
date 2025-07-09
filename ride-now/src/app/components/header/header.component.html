@@ -1,1 +1,94 @@
-<p>header works!</p>
+<nav class="navbar navbar-expand-lg bg-white shadow sticky-top py-2 px-3">
+  <div class="container-fluid">
+    <a class="navbar-brand fw-bold text-gradient" routerLink="/">RideNow 🚗</a>
+
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <!-- Left side nav links -->
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/driver-dashboard" routerLinkActive="active">Driver Dashboard</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/book-ride" routerLinkActive="active">Book a Ride</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/ride-history" routerLinkActive="active">Ride History</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            id="profileDropdown"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Profile
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="profileDropdown">
+            <li><a class="dropdown-item" routerLink="/profile/view">View Profile</a></li>
+            <li><a class="dropdown-item" routerLink="/profile/edit">Edit Profile</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" routerLink="/profile/settings">Settings</a></li>
+          </ul>
+        </li>
+      </ul>
+
+      <!-- Right side auth buttons / user dropdown -->
+      <ul class="navbar-nav ms-auto">
+        <li *ngIf="!isLoggedIn" class="nav-item">
+          <a class="btn btn-outline-teal me-2" routerLink="/login">Login</a>
+        </li>
+        <li *ngIf="!isLoggedIn" class="nav-item">
+          <a class="btn btn-teal" routerLink="/register">Register</a>
+        </li>
+
+        <li *ngIf="isLoggedIn" class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle d-flex align-items-center"
+            href="#"
+            id="userDropdown"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <img
+              [src]="userAvatar || 'https://via.placeholder.com/30'"
+              alt="User Avatar"
+              class="rounded-circle me-2"
+              width="30"
+              height="30"
+            />
+            {{ userName || 'User' }}
+            <i class="fas fa-caret-down ms-1"></i>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+            <li>
+              <a class="dropdown-item" routerLink="/settings">
+                <i class="fas fa-cog me-2"></i> Settings
+              </a>
+            </li>
+            <li><hr class="dropdown-divider" /></li>
+            <li>
+              <button class="dropdown-item text-danger" (click)="logout()">
+                <i class="fas fa-sign-out-alt me-2"></i> Logout
+              </button>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

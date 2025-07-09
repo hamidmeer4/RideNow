@@ -1,0 +1,115 @@
+<main class="container py-4">
+  <!-- Driver Profile Section -->
+  <section class="d-flex align-items-center mb-4 p-3 bg-white rounded shadow">
+    <img src="https://randomuser.me/api/portraits/men/81.jpg" alt="Driver Profile" class="rounded-circle me-3" style="width: 80px; height: 80px; object-fit: cover;">
+    <div>
+      <h4 class="mb-0 fw-bold text-primary">John Doe ⭐ 4.9</h4>
+      <small class="text-muted">Toyota Prius | ABC-123 | Blue</small>
+    </div>
+<button mat-raised-button class="ms-auto" style="background-color: teal; color: white;">Edit Profile</button>
+  </section>
+
+  <!-- Status Management -->
+  <section class="mb-4 p-3 bg-gradient bg-primary bg-opacity-10 rounded shadow d-flex align-items-center justify-content-between">
+    <div>
+      <h6 class="fw-bold mb-1">Current Status:</h6>
+      <span class="badge bg-success">Online</span>
+    </div>
+    <mat-slide-toggle color="primary">Go Online / Offline</mat-slide-toggle>
+  </section>
+
+  <!-- Earnings Summary -->
+  <section class="mb-4 montserrat-text">
+    <div class="row g-3">
+      <div class="col-md-4">
+        <div class="card text-center p-3 shadow-sm bg-white rounded ">
+          <h6 class="fw-bold montserrat-text fs-6 ">Today's Earnings</h6>
+          <h3 class="text-success fw-bold">$75.00</h3>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card text-center p-3 shadow-sm bg-white rounded">
+          <h6 class="fw-bold text-muted fs-6">Weekly Earnings</h6>
+          <h3 class="text-primary fw-bold">$420.00</h3>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card text-center p-3 shadow-sm bg-white rounded">
+          <h6 class="fw-bold text-muted fs-6">Total Completed Rides</h6>
+          <h3 class="text-teal fw-bold">112</h3>
+        </div>
+      </div>
+    </div>
+    <div class="text-end mt-2">
+      <button mat-stroked-button color="primary">View Detailed Reports</button>
+    </div>
+  </section>
+
+  <section class="mb-4 p-3 bg-white rounded shadow montserrat-text">
+    <h6 class=" mb-2 fs-6">Active Hours This Week</h6>
+    <mat-progress-bar mode="determinate" value="60" color="primary"></mat-progress-bar>
+    <small class="text-muted">24 hrs of 40 hrs target completed</small>
+  </section>
+
+  <section class="mb-4 p-3 bg-white rounded shadow montserrat-text ">
+    <h6 class="fw-bold mb-2 fs-6">Upcoming Ride</h6>
+    <p class="mb-0">Pickup: 123 Main St, 3:00 PM</p>
+    <p class="mb-0">Drop-off: 456 Elm St</p>
+    <p class="mb-0">Estimated Fare: $18.50</p>
+    <div class="text-end mt-2">
+      <button mat-stroked-button color="primary">View All Upcoming Rides</button>
+    </div>
+  </section>
+
+  <section class="mb-4 p-3 bg-white rounded shadow ">
+    <h6 class="fw-bold mb-2 fs-6 montserrat-text">Recent Ride History</h6>
+    <table class="table table-sm table-hover">
+      <thead>
+        <tr>
+          <th>Date & Time</th>
+          <th>Pickup</th>
+          <th>Drop-off</th>
+          <th>Fare</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Jul 2, 11:00 AM</td>
+          <td>123 Main St</td>
+          <td>789 Oak St</td>
+          <td>$12.00</td>
+        </tr>
+        <tr>
+          <td>Jul 1, 4:00 PM</td>
+          <td>456 Pine St</td>
+          <td>321 Cedar St</td>
+          <td>$15.50</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="text-end">
+      <button mat-stroked-button color="primary">View Full Ride History</button>
+    </div>
+  </section>
+
+  <!-- Notifications Center -->
+  <section class="mb-4 p-3 bg-white rounded shadow ">
+    <h6 class="fw-bold mb-2 montserrat-text fs-6">Notifications</h6>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">System Update: New payout method added.</li>
+      <li class="list-group-item">Ride Cancelled: Jul 1, 2:00 PM</li>
+      <li class="list-group-item">Reminder: Vehicle inspection due next week.</li>
+    </ul>
+    <div class="text-end mt-2">
+      <button mat-stroked-button color="primary">View All Notifications</button>
+    </div>
+  </section>
+
+  <!-- Quick Actions -->
+  <!-- <section class="d-flex justify-content-between p-3 bg-gradient bg-primary rounded shadow text-white">
+    <button mat-flat-button color="accent">Start Ride</button>
+    <button mat-flat-button color="accent">View Schedule</button>
+    <button mat-flat-button color="accent">Contact Support</button>
+    <button mat-flat-button color="accent">Wallet</button>
+  </section> -->
+</main>

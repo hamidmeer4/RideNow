@@ -1,0 +1,9 @@
+.sidebar {
+  height: 100vh; /* Full screen height */
+  position: sticky;
+  top: 0;
+  left: 0;
+  background-color: #ffffff; /* Or dark if using dark mode */
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.05);
+  z-index: 1000;
+}

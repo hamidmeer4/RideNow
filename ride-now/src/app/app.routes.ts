@@ -4,6 +4,10 @@ import { RegisterComponent } from './components/register/register.component';
 import { BookingComponent } from './components/booking/booking.component';
 import { RideHistoryComponent } from './components/ride-history/ride-history.component';
 import { DriverDashboardComponent } from './components/driver-dashboard/driver-dashboard.component';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { DriverComponent } from './components/driver/driver.component';
 
 export const routes: Routes = [
      { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -22,10 +26,16 @@ export const routes: Routes = [
     // canActivate: [AuthGuard]
   },
   {
-    path: 'driver-dashboard',
-    component: DriverDashboardComponent,
+    path: 'dashboard',
+    component: DashboardComponent,
     // canActivate: [AuthGuard]
   },
+  {
+    path: 'driver',
+    component: DriverComponent,
+    // canActivate: [AuthGuard]
+  },
+
 
   { path: '**', redirectTo: 'login' },
 ];

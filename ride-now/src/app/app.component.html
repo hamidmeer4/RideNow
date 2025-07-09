@@ -1,1 +1,11 @@
-<router-outlet></router-outlet>
+<app-header *ngIf="showHeaderFooter"></app-header>
+
+<div class="d-flex" style="min-height: calc(100vh -  /* header + footer height */ 120px);">
+  <app-sidebar *ngIf="showSidebar" class="sidebar"  style="width: 250px"></app-sidebar>
+
+  <main class="flex-grow-1 p-3" style="overflow-y: auto;">
+    <router-outlet></router-outlet>
+  </main>
+</div>
+
+<app-footer *ngIf="showHeaderFooter"></app-footer>
