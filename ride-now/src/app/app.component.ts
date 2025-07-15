@@ -27,10 +27,10 @@ constructor(private router: Router) {
   ).subscribe((event) => {
     const navEndEvent = event as NavigationEnd;
 
-    const hideHeaderFooterOn = ['/login', '/register', '/dashboard','/driver'];
+    const hideHeaderFooterOn = ['/login', '/register', '/dashboard','/driver','/riders'];
     this.showHeaderFooter = !hideHeaderFooterOn.some(path => navEndEvent.urlAfterRedirects.startsWith(path));
 
-    const showSidebarOn = ['/dashboard','/driver'];
+    const showSidebarOn = ['/dashboard','/driver','/riders'];
     this.showSidebar = showSidebarOn.some(path => navEndEvent.urlAfterRedirects.startsWith(path));
   });
 }

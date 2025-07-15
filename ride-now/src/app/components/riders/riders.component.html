@@ -1,0 +1,170 @@
+<div class="container mt-4">
+  <h2
+    class="text-center mb-4"
+    style="font-family: Montserrat; font-weight: 700; color: teal"
+  >
+    Invoices
+  </h2>
+
+  <div class="d-flex justify-content-between align-items-end gap-2 flex-wrap mb-2">
+  <div class="flex-grow-1 mx-2" style="max-width: 600px;">
+    <input
+      pInputText
+      type="text"
+      placeholder="Search Rider / Driver / ID"
+      class="form-control shadow-sm rounded-3 border-0 px-3 py-3 w-100"
+      [style]="{
+        fontFamily: 'Montserrat, sans-serif',
+        fontSize: '1rem',
+        borderRadius: '0.5rem',
+        border: 'none',
+        boxShadow: '0 4px 12px rgba(0,0,0,0.05)',
+        padding: '0.75rem 1rem'
+      }"
+    />
+  </div>
+
+ <div class="d-flex justify-content-end align-items-end gap-3 flex-wrap mb-0">
+
+  <p-dropdown
+    [options]="[
+      { label: 'All', value: '' },
+      { label: 'Paid', value: 'Paid' },
+      { label: 'Unpaid', value: 'Unpaid' }
+    ]"
+    placeholder="Filter by Status"
+    class="p-inputtext-lg rounded-3 shadow-sm border-0"
+    [showClear]="true"
+    [style]="{
+      padding: '0.75rem 1rem',
+      fontFamily: 'Montserrat, sans-serif',
+      fontSize: '1rem',
+      borderRadius: '0.5rem',
+      border: 'none',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'space-between'
+    }"
+  ></p-dropdown>
+
+  <p-calendar
+    placeholder="Select Date Range"
+    selectionMode="range"
+    class="p-inputtext-lg rounded-3 shadow border-0"
+    [showIcon]="true"
+    [showButtonBar]="true"
+    dateFormat="dd M yy"
+    [iconDisplay]="'input'"
+    [style]="{
+      display: 'flex',
+      alignItems: 'center'
+    }"
+    [inputStyle]="{
+      padding: '0.75rem 1rem',
+      fontFamily: 'Montserrat, sans-serif',
+      fontSize: '1rem',
+      borderRadius: '0.5rem',
+      border: 'none'
+    }"
+    [panelStyle]="{
+      borderRadius: '0.75rem',
+      boxShadow: '0 8px 24px rgba(0,0,0,0.15)'
+    }"
+  ></p-calendar>
+</div>
+</div>
+
+  <!-- Table -->
+  <div class="card p-3 shadow rounded-4 mt-3">
+    <table
+      mat-table
+      [dataSource]="dataSource"
+      class="mat-elevation-z2 table table-striped table-hover"
+    >
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef>Invoice ID</th>
+        <td mat-cell *matCellDef="let element">{{ element.id }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="riderName">
+        <th mat-header-cell *matHeaderCellDef>Rider Name</th>
+        <td mat-cell *matCellDef="let element">{{ element.riderName }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="driverName">
+        <th mat-header-cell *matHeaderCellDef>Driver Name</th>
+        <td mat-cell *matCellDef="let element">{{ element.driverName }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="rideDate">
+        <th mat-header-cell *matHeaderCellDef>Ride Date</th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.rideDate | date : "mediumDate" }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="locations">
+        <th mat-header-cell *matHeaderCellDef>Pickup ➔ Drop-off</th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.pickupLocation }} ➔ {{ element.dropoffLocation }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="amount">
+        <th mat-header-cell *matHeaderCellDef>Amount</th>
+        <td mat-cell *matCellDef="let element">PKR {{ element.amount }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="status">
+        <th mat-header-cell *matHeaderCellDef>Status</th>
+        <td mat-cell *matCellDef="let element">
+          <mat-chip
+            [color]="element.status === 'Paid' ? 'primary' : 'warn'"
+            selected
+          >
+            {{ element.status }}
+          </mat-chip>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef>Actions</th>
+        <td mat-cell *matCellDef="let element">
+          <button
+            mat-icon-button
+            color="primary"
+            matTooltip="View Invoice"
+            (click)="viewInvoice(element)"
+          >
+            <mat-icon>visibility</mat-icon>
+          </button>
+          <button
+            mat-icon-button
+            color="accent"
+            matTooltip="Download Invoice"
+            (click)="downloadInvoice(element)"
+          >
+            <mat-icon>download</mat-icon>
+          </button>
+          <button
+            mat-icon-button
+            color="warn"
+            matTooltip="Mark as Paid"
+            *ngIf="element.status === 'Unpaid'"
+            (click)="markAsPaid(element)"
+          >
+            <mat-icon>check_circle</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+
+    <mat-paginator
+      [pageSizeOptions]="[5, 10, 20]"
+      showFirstLastButtons
+    ></mat-paginator>
+  </div>
+</div>
