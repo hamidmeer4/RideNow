@@ -1,0 +1,17 @@
+table {
+  font-family: 'Palanquin', sans-serif;
+  font-size: 0.95rem;
+}
+.mat-header-cell {
+  font-weight: 600;
+  background: linear-gradient(to right, #14b8a6, #0f766e);
+  color: white;
+}
+.mat-chip.primary {
+  background-color: #14b8a6;
+  color: white;
+}
+.mat-chip.warn {
+  background-color: #dc2626;
+  color: white;
+}
