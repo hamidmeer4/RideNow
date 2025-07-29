@@ -9,7 +9,6 @@ import { Router, RouterModule, RouterOutlet } from '@angular/router';
   styleUrl: './sidebar.component.scss'
 })
 export class SidebarComponent {
- // Optional: for showing toggle state
   currentTheme: 'light' | 'dark' = 'light';
 
   ngOnInit() {

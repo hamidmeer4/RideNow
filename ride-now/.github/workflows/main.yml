@@ -1,9 +1,9 @@
-name: Deploy Angular App 
+name: Deploy Angular App
 
 on:
   push:
     branches:
-      - main  # Or use 'master' if that’s your default branch
+      - main  # or 'master' if your default branch is master
 
 jobs:
   deploy:

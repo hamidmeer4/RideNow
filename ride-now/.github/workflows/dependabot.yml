@@ -1,0 +1,9 @@
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"  # root directory of package.json
+    schedule:
+      interval: "daily"  # Options: daily, weekly, monthly
+    commit-message:
+      prefix: "deps"
+    open-pull-requests-limit: 5
